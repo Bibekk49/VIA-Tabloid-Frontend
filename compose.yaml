@@ -1,0 +1,12 @@
+services:
+  js-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: via-tabloid-frontend
+    container_name: via-tabloid-frontend
+    restart: unless-stopped
+    init: true
+    ports:
+      - "80:80"
+    pull_policy: never  # Prevent Docker from attempting to pull the image
